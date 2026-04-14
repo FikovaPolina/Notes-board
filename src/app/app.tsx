@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-// import { Header } from "../features/header/Header";
+import { useLocation } from "react-router-dom"; 
+import { Header } from "../features/header/index";
+import { ROUTES } from "../shared/model/routes";
 
 
 
@@ -8,12 +9,12 @@ import { useLocation } from "react-router-dom";
 export function App() {
   const location = useLocation();
 
-  // const isAuthPage =
-  //   // location.pathname === ROUTES.LOGIN || location.pathname === ROUTES.REGISTER;
+  const isAuthPage =
+    location.pathname === ROUTES.LOGIN || location.pathname === ROUTES.REGISTER;
 
   return (
     <div>
-      {/* {!isAuthPage && < Header />} */}
+      {!isAuthPage && < Header />}
       <Outlet />
     </div>
   );

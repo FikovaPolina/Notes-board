@@ -1,5 +1,5 @@
 import { createOpenApiHttp } from "openapi-msw";
-import type { paths } from "@/shared/api/schema/generated";
+import type { paths } from "../schema/generated";
 import { CONFIG } from "../../model/config";
 
 export const http = createOpenApiHttp<paths>({
