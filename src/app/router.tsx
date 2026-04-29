@@ -1,15 +1,18 @@
-
 import { ROUTES } from "../shared/model/routes";
 import { createBrowserRouter, redirect } from "react-router-dom";
-import { App } from './app'
+import { App } from "./app";
+import { Providers } from "./providers";
 
 export const router = createBrowserRouter([
   {
-    element: <App/>, 
+    element: 
+      <Providers>
+        <App />
+      </Providers>,
     children: [
       {
         path: ROUTES.BOARDS,
-        lazy: () => import("../features/boards-list/board-card.page"),
+        lazy: () => import("../features/boards-list/board-list.page"),
       },
       {
         path: ROUTES.BOARD,
