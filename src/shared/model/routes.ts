@@ -14,7 +14,7 @@ export type Pages = {
       boardId: string;
     };
   };
-  // other routes with params
+
 };
 
 declare module "react-router" {
