@@ -12,7 +12,7 @@ export function App() {
 
   return (
 
-      <div>
+      <div className="min-h-screen flex flex-col">
         {!isAuthPage && <Header />}
         <Outlet />
       </div>
