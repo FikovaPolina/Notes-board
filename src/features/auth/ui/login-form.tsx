@@ -1,4 +1,4 @@
-import { Button } from "../../components/ui/button"
+import { Button } from "../../../components/ui/button"
 import {
   FormField,
   FormItem,
@@ -6,8 +6,8 @@ import {
   FormControl,
   FormMessage,
   Form,
-} from "../../components/ui/form";
-import { Input } from "../../components/ui/input";
+} from "../../../components/ui/form";
+import { Input } from "../../../components/ui/input";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,14 +16,14 @@ import { useLogin } from "../model/use-login";
 const loginSchema = z.object({
   email: z
     .string({
-      required_error: "Email обязателен",
+      message: "Email required",
     })
-    .email("Неверный email"),
+    .email("Invalid email"),
   password: z
     .string({
-      required_error: "Пароль обязателен",
+        message: "Password required",
     })
-    .min(6, "Пароль должен быть не менее 6 символов"),
+    .min(8, "The password must be at least 8 characters long."),
 });
 
 export function LoginForm() {
