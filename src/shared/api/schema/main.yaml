@@ -34,4 +34,3 @@ paths:
   /boards/{boardId}:
     delete:
       $ref: "./endpoints/boards.yaml#/deleteBoard"
-

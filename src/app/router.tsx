@@ -3,22 +3,23 @@ import { createBrowserRouter, redirect } from "react-router-dom";
 import { App } from "./app";
 import { Providers } from "./providers";
 import { AppHeader } from "../features/header";
-import { ProtectedRoute } from "./protected-route";
+import { ProtectedRoute, protectedLoader } from "./protected-route";
 
 export const router = createBrowserRouter([
   {
-    element: 
+    element: (
       <Providers>
         <App />
-      </Providers>,
+      </Providers>
+    ),
 
-    children:[
+    children: [
       {
-        // loader: protectedLoader,
-        element:(
+        loader: protectedLoader,
+        element: (
           <>
-          <AppHeader/>
-          <ProtectedRoute/>
+            <AppHeader />
+            <ProtectedRoute />
           </>
         ),
         children: [
@@ -32,18 +33,18 @@ export const router = createBrowserRouter([
           },
         ],
       },
-    {
-      path: ROUTES.LOGIN,
-      lazy: () => import("../features/auth/login.page"),
-    },
-    {
-      path: ROUTES.REGISTER,
-      lazy: () => import("../features/auth/register.page"),
-    },
-    {
-      path: ROUTES.HOME,
-      loader: () => redirect(ROUTES.BOARDS),
-    },
-    ]
+      {
+        path: ROUTES.LOGIN,
+        lazy: () => import("../features/auth/login.page"),
+      },
+      {
+        path: ROUTES.REGISTER,
+        lazy: () => import("../features/auth/register.page"),
+      },
+      {
+        path: ROUTES.HOME,
+        loader: () => redirect(ROUTES.BOARDS),
+      },
+    ],
   },
 ]);

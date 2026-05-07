@@ -1,4 +1,4 @@
-import { Button } from "../../../components/ui/button"
+import { Button } from "../../../components/ui/button";
 import {
   FormField,
   FormItem,
@@ -21,7 +21,7 @@ const loginSchema = z.object({
     .email("Invalid email"),
   password: z
     .string({
-        message: "Password required",
+      message: "Password required",
     })
     .min(8, "The password must be at least 8 characters long."),
 });

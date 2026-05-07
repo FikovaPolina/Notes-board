@@ -14,7 +14,6 @@ export type Pages = {
       boardId: string;
     };
   };
-
 };
 
 declare module "react-router" {

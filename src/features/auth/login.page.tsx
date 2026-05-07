@@ -6,7 +6,7 @@ import { LoginForm } from "./ui/login-form";
 function LoginPage() {
   return (
     <AuthLayout
-    form={<LoginForm />}
+      form={<LoginForm />}
       title="Log in"
       description="Enter your email and password"
       footerText={

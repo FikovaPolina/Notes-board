@@ -5,7 +5,7 @@ import { authHandlers } from "./handlers/auth";
 export const worker = setupWorker(...boardsHandlers, ...authHandlers);
 
 worker.start({
-    serviceWorker: {
-      url: '/mockServiceWorker.js', 
-    },
-  })
+  serviceWorker: {
+    url: "/mockServiceWorker.js",
+  },
+});
